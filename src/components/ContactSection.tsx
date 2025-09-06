@@ -113,8 +113,8 @@ const ContactSection = () => {
               <CardTitle className="text-foreground">Escritório</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-primary text-lg font-semibold mb-2">São Paulo - SP</p>
-              <p className="text-muted-foreground text-sm">Av. Paulista, 1000 - Bela Vista</p>
+              <p className="text-primary text-lg font-semibold mb-2">Brasília - DF</p>
+              <p className="text-muted-foreground text-sm">Asa Sul, Brasília - DF</p>
               <p className="text-muted-foreground text-sm">Atendimento por agendamento</p>
             </CardContent>
           </Card>
