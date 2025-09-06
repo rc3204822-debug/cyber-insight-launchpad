@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { AlertTriangle, Clock, Shield } from "lucide-react";
 import { useState, useEffect } from "react";
+import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const ConversionBanner = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -11,8 +12,7 @@ const ConversionBanner = () => {
 
   const handleWhatsAppClick = () => {
     const message = "🎯 Quero GARANTIR minha consulta GRATUITA antes que a oferta expire!";
-    const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+    openWhatsApp(WHATSAPP_NUMBER, message);
   };
 
   useEffect(() => {

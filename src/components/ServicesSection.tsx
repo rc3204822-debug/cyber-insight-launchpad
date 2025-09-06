@@ -11,6 +11,7 @@ import {
   Globe,
   Database
 } from "lucide-react";
+import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const ServicesSection = () => {
   const services = [
@@ -113,8 +114,7 @@ const ServicesSection = () => {
               className="bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow text-lg px-8 py-4"
               onClick={() => {
                 const message = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato. Caso urgente.";
-                const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
-                window.open(url, '_blank');
+                openWhatsApp(WHATSAPP_NUMBER, message);
               }}
             >
               <Shield className="w-5 h-5 mr-2" />

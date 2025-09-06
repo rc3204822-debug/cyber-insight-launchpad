@@ -1,10 +1,10 @@
 import { MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const WhatsAppFloat = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const whatsappNumber = "5561982844543";
   const message = "Olá! Gostaria de agendar minha consulta GRATUITA de investigação cibernética.";
 
   useEffect(() => {
@@ -13,8 +13,7 @@ const WhatsAppFloat = () => {
   }, []);
 
   const handleWhatsAppClick = () => {
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+    openWhatsApp(WHATSAPP_NUMBER, message);
   };
 
   return (

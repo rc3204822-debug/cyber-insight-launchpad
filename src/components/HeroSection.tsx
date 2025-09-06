@@ -1,20 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Eye, Lock, Zap, ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
 import TrustBadges from "./TrustBadges";
+import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const HeroSection = () => {
-  const whatsappNumber = "5561982844543";
   const message = "Olá! Gostaria de agendar minha consulta GRATUITA de investigação cibernética.";
   
   const handleWhatsAppClick = () => {
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+    openWhatsApp(WHATSAPP_NUMBER, message);
   };
 
   const handleEmergencyWhatsApp = () => {
     const emergencyMessage = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato. Caso urgente.";
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(emergencyMessage)}`;
-    window.open(url, '_blank');
+    openWhatsApp(WHATSAPP_NUMBER, emergencyMessage);
   };
 
   return (

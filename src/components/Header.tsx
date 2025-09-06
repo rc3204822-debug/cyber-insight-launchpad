@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,8 +16,7 @@ const Header = () => {
 
   const handleEmergenciaClick = () => {
     const message = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato. Caso urgente.";
-    const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+    openWhatsApp(WHATSAPP_NUMBER, message);
   };
 
   return (

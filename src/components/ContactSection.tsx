@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -45,8 +46,7 @@ _Enviado via formulário do site_
     `.trim();
     
     // Redirecionar para WhatsApp
-    const url = `https://wa.me/5561982844543?text=${encodeURIComponent(whatsappMessage)}`;
-    window.open(url, '_blank');
+    openWhatsApp(WHATSAPP_NUMBER, whatsappMessage);
     
     toast({
       title: "Redirecionando para WhatsApp!",
@@ -99,8 +99,7 @@ _Enviado via formulário do site_
                 <Button 
                   onClick={() => {
                     const message = "Olá! Gostaria de agendar minha consulta GRATUITA de investigação cibernética.";
-                    const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
-                    window.open(url, '_blank');
+                    openWhatsApp(WHATSAPP_NUMBER, message);
                   }}
                   className="w-full bg-green-500 hover:bg-green-600 text-white"
                 >
@@ -263,8 +262,7 @@ _Enviado via formulário do site_
                   <Button 
                     onClick={() => {
                       const message = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato.";
-                      const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
-                      window.open(url, '_blank');
+                      openWhatsApp(WHATSAPP_NUMBER, message);
                     }}
                     variant="outline" 
                     className="w-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white"

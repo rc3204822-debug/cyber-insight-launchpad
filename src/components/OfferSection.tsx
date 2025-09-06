@@ -11,20 +11,18 @@ import {
   Star,
   MessageCircle
 } from "lucide-react";
+import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const OfferSection = () => {
-  const whatsappNumber = "5561982844543";
   
   const handleWhatsAppConsulta = () => {
     const message = "Olá! Gostaria de agendar minha CONSULTA GRATUITA de investigação cibernética.";
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+    openWhatsApp(WHATSAPP_NUMBER, message);
   };
 
   const handleWhatsAppEmergencia = () => {
     const message = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato. Caso urgente que requer ação em até 1 hora.";
-    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+    openWhatsApp(WHATSAPP_NUMBER, message);
   };
 
   return (

@@ -19,6 +19,7 @@ import {
   Phone,
   Star
 } from "lucide-react";
+import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const Services = () => {
   const services = [
@@ -116,8 +117,7 @@ const Services = () => {
 
   const handleWhatsAppContact = (serviceName: string) => {
     const message = `Olá! Gostaria de solicitar mais informações sobre o serviço de "${serviceName}". Preciso de uma consulta GRATUITA.`;
-    const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
-    window.open(url, '_blank');
+    openWhatsApp(WHATSAPP_NUMBER, message);
   };
 
   const handleBackToHome = () => {
@@ -218,8 +218,7 @@ const Services = () => {
                       variant="outline"
                       onClick={() => {
                         const message = `🚨 EMERGÊNCIA! Preciso do serviço de "${service.title}" com urgência.`;
-                        const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
-                        window.open(url, '_blank');
+                        openWhatsApp(WHATSAPP_NUMBER, message);
                       }}
                       className="w-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
                     >
