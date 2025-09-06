@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
-import { Shield, Eye, Lock, Zap } from "lucide-react";
+import { Shield, Eye, Lock, Zap, ArrowRight, CheckCircle2 } from "lucide-react";
+import TrustBadges from "./TrustBadges";
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen bg-gradient-dark flex items-center pt-20">
+    <section id="home" className="min-h-screen bg-gradient-dark flex items-center pt-24 pb-12">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-8">
@@ -22,21 +23,51 @@ const HeroSection = () => {
               CIBERNÉTICA
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Proteção digital especializada com tecnologia de ponta. 
-              Investigamos, protegemos e solucionamos casos cibernéticos com máxima discrição e eficiência.
+              Resolva seu caso em <strong className="text-primary">72 horas</strong> com os especialistas 
+              mais experientes do Brasil. <strong className="text-foreground">Primeira consulta GRATUITA!</strong>
+            </p>
+          </div>
+
+          {/* Urgency Callout */}
+          <div className="bg-red-600/20 border border-red-500 rounded-lg p-6 mb-8 max-w-2xl mx-auto">
+            <div className="flex items-center justify-center space-x-2 mb-3">
+              <Zap className="w-5 h-5 text-red-500" />
+              <span className="text-red-500 font-bold text-lg">ATENÇÃO: OFERTA LIMITADA</span>
+            </div>
+            <p className="text-foreground text-lg">
+              Apenas <strong className="text-primary">10 consultas gratuitas</strong> disponíveis esta semana!
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow text-lg px-8 py-4">
-              <Shield className="w-5 h-5 mr-2" />
-              Consulta Gratuita
+            <Button size="lg" className="bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow text-xl px-12 py-6 animate-pulse">
+              <Shield className="w-6 h-6 mr-3" />
+              CONSULTA GRÁTIS AGORA
+              <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground text-lg px-8 py-4">
-              <Eye className="w-5 h-5 mr-2" />
-              Nossos Serviços
+            <Button size="lg" variant="outline" className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white text-xl px-8 py-6">
+              <Zap className="w-6 h-6 mr-2" />
+              EMERGÊNCIA 24H
             </Button>
           </div>
+
+          {/* Social Proof Quick */}
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-12 text-sm text-muted-foreground">
+            <div className="flex items-center">
+              <CheckCircle2 className="w-5 h-5 text-green-500 mr-2" />
+              <span><strong className="text-foreground">500+</strong> casos resolvidos</span>
+            </div>
+            <div className="flex items-center">
+              <CheckCircle2 className="w-5 h-5 text-green-500 mr-2" />
+              <span><strong className="text-foreground">98%</strong> taxa de sucesso</span>
+            </div>
+            <div className="flex items-center">
+              <CheckCircle2 className="w-5 h-5 text-green-500 mr-2" />
+              <span><strong className="text-foreground">15+</strong> anos de experiência</span>
+            </div>
+          </div>
+
+          <TrustBadges />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
             <div className="bg-card border border-border rounded-lg p-6 hover:shadow-gold transition-all duration-300">
@@ -46,13 +77,13 @@ const HeroSection = () => {
             </div>
             <div className="bg-card border border-border rounded-lg p-6 hover:shadow-gold transition-all duration-300">
               <Zap className="w-12 h-12 text-primary mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">Atendimento 24h</h3>
-              <p className="text-muted-foreground">Emergências cibernéticas não esperam horário comercial</p>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Resultados Rápidos</h3>
+              <p className="text-muted-foreground">Resolvemos 80% dos casos em até 72 horas</p>
             </div>
             <div className="bg-card border border-border rounded-lg p-6 hover:shadow-gold transition-all duration-300">
               <Shield className="w-12 h-12 text-primary mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">Tecnologia Avançada</h3>
-              <p className="text-muted-foreground">Ferramentas de última geração para investigação digital</p>
+              <h3 className="text-xl font-semibold text-foreground mb-2">Garantia Total</h3>
+              <p className="text-muted-foreground">100% de satisfação ou seu dinheiro de volta</p>
             </div>
           </div>
         </div>
