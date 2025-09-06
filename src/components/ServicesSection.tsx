@@ -89,6 +89,7 @@ const ServicesSection = () => {
                 <Button 
                   variant="outline" 
                   className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  onClick={() => window.location.href = '/services'}
                 >
                   Saiba Mais
                 </Button>
@@ -107,7 +108,15 @@ const ServicesSection = () => {
               Nossa equipe especializada está disponível 24 horas por dia para casos urgentes. 
               Tempo é crucial em investigações digitais.
             </p>
-            <Button size="lg" className="bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow text-lg px-8 py-4">
+            <Button 
+              size="lg" 
+              className="bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow text-lg px-8 py-4"
+              onClick={() => {
+                const message = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato. Caso urgente.";
+                const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
+                window.open(url, '_blank');
+              }}
+            >
               <Shield className="w-5 h-5 mr-2" />
               Contato de Emergência
             </Button>

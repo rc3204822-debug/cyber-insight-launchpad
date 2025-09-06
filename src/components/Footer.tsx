@@ -37,11 +37,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-6">Serviços</h4>
             <ul className="space-y-3">
-              <li><a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Investigação Digital</a></li>
-              <li><a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Rastreamento de Celulares</a></li>
-              <li><a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Crimes Cibernéticos</a></li>
-              <li><a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Fraudes Financeiras</a></li>
-              <li><a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Recuperação de Dados</a></li>
+              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Investigação Digital</a></li>
+              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Rastreamento de Celulares</a></li>
+              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Crimes Cibernéticos</a></li>
+              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Fraudes Financeiras</a></li>
+              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Recuperação de Dados</a></li>
             </ul>
           </div>
 
