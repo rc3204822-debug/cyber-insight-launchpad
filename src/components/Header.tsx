@@ -5,6 +5,20 @@ import { useState } from "react";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleOrcamentoClick = () => {
+    // Scroll para a seção de contato onde está o formulário de orçamento
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleEmergenciaClick = () => {
+    const message = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato. Caso urgente.";
+    const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
+
   return (
     <header className="fixed top-12 w-full z-40 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4">
@@ -28,10 +42,17 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+            <Button 
+              variant="outline" 
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+              onClick={handleOrcamentoClick}
+            >
               Orçamento
             </Button>
-            <Button className="bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow">
+            <Button 
+              className="bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow"
+              onClick={handleEmergenciaClick}
+            >
               Emergência 24h
             </Button>
           </div>
@@ -54,10 +75,17 @@ const Header = () => {
               <a href="#about" className="text-foreground hover:text-primary transition-colors">Sobre</a>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contato</a>
               <div className="flex flex-col space-y-2 pt-4">
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                <Button 
+                  variant="outline" 
+                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  onClick={handleOrcamentoClick}
+                >
                   Orçamento
                 </Button>
-                <Button className="bg-gradient-gold text-primary-foreground shadow-gold">
+                <Button 
+                  className="bg-gradient-gold text-primary-foreground shadow-gold"
+                  onClick={handleEmergenciaClick}
+                >
                   Emergência 24h
                 </Button>
               </div>
