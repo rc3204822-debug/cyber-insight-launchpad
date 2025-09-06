@@ -29,10 +29,30 @@ const ContactSection = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Criar mensagem formatada para WhatsApp
+    const whatsappMessage = `
+🔍 *SOLICITAÇÃO DE ORÇAMENTO*
+
+👤 *Nome:* ${formData.name}
+📧 *E-mail:* ${formData.email}  
+📱 *Telefone:* ${formData.phone}
+📋 *Assunto:* ${formData.subject}
+💬 *Mensagem:* ${formData.message}
+${formData.urgent ? '🚨 *URGENTE:* Caso requer ação imediata!' : ''}
+
+_Enviado via formulário do site_
+    `.trim();
+    
+    // Redirecionar para WhatsApp
+    const url = `https://wa.me/5561982844543?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(url, '_blank');
+    
     toast({
-      title: "Mensagem Enviada!",
-      description: "Entraremos em contato em até 2 horas.",
+      title: "Redirecionando para WhatsApp!",
+      description: "Você será redirecionado para continuar no WhatsApp.",
     });
+    
     setFormData({
       name: '',
       email: '',
