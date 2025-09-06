@@ -10,7 +10,8 @@ import {
   Clock,
   Shield,
   MessageSquare,
-  AlertTriangle
+  AlertTriangle,
+  MessageCircle
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -71,9 +72,22 @@ const ContactSection = () => {
               <CardTitle className="text-foreground">Telefone</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-primary text-lg font-semibold mb-2">(11) 9 9999-9999</p>
-              <p className="text-muted-foreground text-sm">Segunda a Sexta: 8h às 18h</p>
-              <p className="text-muted-foreground text-sm">Emergências: 24h todos os dias</p>
+              <p className="text-primary text-lg font-semibold mb-2">(61) 9 8284-4543</p>
+              <p className="text-muted-foreground text-sm mb-2">WhatsApp disponível 24h</p>
+              <p className="text-muted-foreground text-sm">Resposta instantânea</p>
+              <div className="mt-4">
+                <Button 
+                  onClick={() => {
+                    const message = "Olá! Gostaria de agendar minha consulta GRATUITA de investigação cibernética.";
+                    const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
+                    window.open(url, '_blank');
+                  }}
+                  className="w-full bg-green-500 hover:bg-green-600 text-white"
+                >
+                  <MessageCircle className="w-4 h-4 mr-2" />
+                  Chamar no WhatsApp
+                </Button>
+              </div>
             </CardContent>
           </Card>
 
@@ -198,10 +212,10 @@ const ContactSection = () => {
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow text-lg py-3"
+                  className="w-full bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl text-lg py-3"
                 >
-                  <Shield className="w-5 h-5 mr-2" />
-                  Enviar Solicitação
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  Enviar via WhatsApp
                 </Button>
               </form>
             </CardContent>
@@ -222,13 +236,21 @@ const ContactSection = () => {
                   vazamento de dados em andamento ou chantagens digitais.
                 </p>
                 <div className="space-y-4">
-                  <Button className="w-full bg-red-600 hover:bg-red-700 text-white text-lg py-3">
-                    <Phone className="w-5 h-5 mr-2" />
-                    Emergência: (11) 9 8888-8888
+                  <Button className="w-full bg-green-500 hover:bg-green-600 text-white text-lg py-3">
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    WhatsApp: (61) 9 8284-4543
                   </Button>
-                  <Button variant="outline" className="w-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white">
-                    <Mail className="w-5 h-5 mr-2" />
-                    emergencia@investigcib.com.br
+                  <Button 
+                    onClick={() => {
+                      const message = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato.";
+                      const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
+                      window.open(url, '_blank');
+                    }}
+                    variant="outline" 
+                    className="w-full border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
+                  >
+                    <AlertTriangle className="w-5 h-5 mr-2" />
+                    Emergência WhatsApp
                   </Button>
                 </div>
               </CardContent>

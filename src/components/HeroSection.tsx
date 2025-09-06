@@ -1,8 +1,22 @@
 import { Button } from "@/components/ui/button";
-import { Shield, Eye, Lock, Zap, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Shield, Eye, Lock, Zap, ArrowRight, CheckCircle2, MessageCircle } from "lucide-react";
 import TrustBadges from "./TrustBadges";
 
 const HeroSection = () => {
+  const whatsappNumber = "5561982844543";
+  const message = "Olá! Gostaria de agendar minha consulta GRATUITA de investigação cibernética.";
+  
+  const handleWhatsAppClick = () => {
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
+
+  const handleEmergencyWhatsApp = () => {
+    const emergencyMessage = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato. Caso urgente.";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(emergencyMessage)}`;
+    window.open(url, '_blank');
+  };
+
   return (
     <section id="home" className="min-h-screen bg-gradient-dark flex items-center pt-24 pb-12">
       <div className="container mx-auto px-4">
@@ -40,15 +54,34 @@ const HeroSection = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow text-xl px-12 py-6 animate-pulse">
-              <Shield className="w-6 h-6 mr-3" />
-              CONSULTA GRÁTIS AGORA
+            <Button 
+              size="lg" 
+              onClick={handleWhatsAppClick}
+              className="bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl text-xl px-12 py-6 animate-pulse"
+            >
+              <MessageCircle className="w-6 h-6 mr-3" />
+              WHATSAPP GRÁTIS AGORA
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button size="lg" variant="outline" className="border-red-500 text-red-500 hover:bg-red-500 hover:text-white text-xl px-8 py-6">
+            <Button 
+              size="lg" 
+              onClick={handleEmergencyWhatsApp}
+              className="bg-red-600 hover:bg-red-700 text-white text-xl px-8 py-6"
+            >
               <Zap className="w-6 h-6 mr-2" />
-              EMERGÊNCIA 24H
+              EMERGÊNCIA WHATSAPP
             </Button>
+          </div>
+
+          {/* WhatsApp CTA */}
+          <div className="bg-green-500/20 border border-green-500 rounded-lg p-4 mb-8 max-w-lg mx-auto">
+            <div className="flex items-center justify-center space-x-2">
+              <MessageCircle className="w-5 h-5 text-green-500" />
+              <span className="text-green-500 font-semibold">WhatsApp: (61) 9 8284-4543</span>
+            </div>
+            <p className="text-sm text-muted-foreground mt-2">
+              Resposta instantânea • Atendimento 24h • Consulta gratuita
+            </p>
           </div>
 
           {/* Social Proof Quick */}

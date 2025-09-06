@@ -8,10 +8,25 @@ import {
   Phone,
   AlertTriangle,
   Gift,
-  Star
+  Star,
+  MessageCircle
 } from "lucide-react";
 
 const OfferSection = () => {
+  const whatsappNumber = "5561982844543";
+  
+  const handleWhatsAppConsulta = () => {
+    const message = "Olá! Gostaria de agendar minha CONSULTA GRATUITA de investigação cibernética.";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
+
+  const handleWhatsAppEmergencia = () => {
+    const message = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato. Caso urgente que requer ação em até 1 hora.";
+    const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
+
   return (
     <section className="py-16 bg-gradient-dark">
       <div className="container mx-auto px-4">
@@ -74,9 +89,12 @@ const OfferSection = () => {
                     Sem compromisso
                   </li>
                 </ul>
-                <Button className="w-full bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow text-lg py-3">
-                  <Gift className="w-5 h-5 mr-2" />
-                  GARANTIR CONSULTA GRÁTIS
+                <Button 
+                  onClick={handleWhatsAppConsulta}
+                  className="w-full bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl text-lg py-3"
+                >
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  WHATSAPP GRÁTIS
                 </Button>
               </CardContent>
             </Card>
@@ -119,12 +137,29 @@ const OfferSection = () => {
                     Suporte contínuo
                   </li>
                 </ul>
-                <Button className="w-full bg-red-600 hover:bg-red-700 text-white text-lg py-3">
-                  <Phone className="w-5 h-5 mr-2" />
-                  EMERGÊNCIA AGORA
+                <Button 
+                  onClick={handleWhatsAppEmergencia}
+                  className="w-full bg-red-600 hover:bg-red-700 text-white text-lg py-3"
+                >
+                  <MessageCircle className="w-5 h-5 mr-2" />
+                  WHATSAPP EMERGÊNCIA
                 </Button>
               </CardContent>
             </Card>
+          </div>
+
+          {/* WhatsApp Highlight */}
+          <div className="bg-green-500/20 border border-green-500 rounded-lg p-6 mb-8 text-center">
+            <MessageCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
+            <h3 className="text-2xl font-bold text-foreground mb-2">
+              Atendimento Direto via WhatsApp
+            </h3>
+            <p className="text-lg text-muted-foreground mb-4">
+              <strong className="text-green-500">(61) 9 8284-4543</strong>
+            </p>
+            <p className="text-muted-foreground">
+              Resposta instantânea • Disponível 24h • Primeira consulta sempre gratuita
+            </p>
           </div>
 
           {/* Guarantee */}
