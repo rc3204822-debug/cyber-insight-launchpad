@@ -9,6 +9,12 @@ const ConversionBanner = () => {
     seconds: 30
   });
 
+  const handleWhatsAppClick = () => {
+    const message = "🎯 Quero GARANTIR minha consulta GRATUITA antes que a oferta expire!";
+    const url = `https://wa.me/5561982844543?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+  };
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(prev => {
@@ -43,7 +49,12 @@ const ConversionBanner = () => {
               {String(timeLeft.seconds).padStart(2, '0')}
             </span>
           </div>
-          <Button size="sm" variant="outline" className="bg-white text-red-600 hover:bg-gray-100">
+          <Button 
+            size="sm" 
+            variant="outline" 
+            className="bg-white text-red-600 hover:bg-gray-100"
+            onClick={handleWhatsAppClick}
+          >
             GARANTIR AGORA
           </Button>
         </div>
