@@ -1,4 +1,8 @@
+import { trackConversion } from './tracking';
+
 export const openWhatsApp = (phoneNumber: string, message: string) => {
+  // Rastrear conversão antes de abrir WhatsApp
+  trackConversion();
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   
   try {
