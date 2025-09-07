@@ -52,11 +52,11 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Por Que <span className="bg-gradient-gold bg-clip-text text-transparent">Confiar</span> em Nós?
+            Por Que Escolher Nosso <span className="bg-gradient-gold bg-clip-text text-transparent">Detetive DF</span>?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Nossa expertise em investigação cibernética é reconhecida nacionalmente. 
-            Combinamos tecnologia de ponta com experiência sólida para entregar resultados excepcionais.
+            Somos detetive particular em Brasília DF com expertise reconhecida nacionalmente. 
+            O melhor detetive particular DF barato com tecnologia de ponta para resultados excepcionais.
           </p>
         </div>
 
@@ -113,9 +113,9 @@ const AboutSection = () => {
               Nossa Missão
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Oferecemos serviços de investigação cibernética de excelência, utilizando 
-              metodologias científicas e ferramentas de última geração para garantir 
-              resultados precisos e confiáveis.
+              Como detetive particular em Brasília DF, oferecemos serviços de investigação de excelência. 
+              Nosso detetive em Brasília utiliza metodologias científicas e ferramentas de última geração 
+              para garantir resultados precisos e confiáveis no Distrito Federal.
             </p>
             <div className="bg-card border border-border rounded-lg p-6">
               <h4 className="text-lg font-semibold text-foreground mb-4">Nossos Valores</h4>

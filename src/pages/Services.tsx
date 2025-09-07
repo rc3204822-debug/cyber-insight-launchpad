@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ConversionBanner from "@/components/ConversionBanner";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
+import SEO from "@/components/SEO";
 import { 
   Search, 
   Smartphone, 
@@ -126,6 +127,12 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Serviços Detetive Particular DF - Investigação Brasília | Preços"
+        description="Conheça todos os serviços do detetive particular DF. Investigação de infidelidade, rastreamento, forense digital em Brasília. Preços transparentes e atendimento 24h."
+        keywords="detetive particular df preço, serviços detetive brasília, investigação particular df, detetive particular em brasília valores"
+        schemaType="service"
+      />
       <ConversionBanner />
       <Header />
       
@@ -143,11 +150,11 @@ const Services = () => {
             </Button>
             
             <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6">
-              Nossos <span className="bg-gradient-gold bg-clip-text text-transparent">Serviços</span>
+              Detetive Particular <span className="bg-gradient-gold bg-clip-text text-transparent">DF</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-              Oferecemos uma gama completa de serviços de investigação cibernética 
-              com metodologia profissional, tecnologia avançada e resultados comprovados.
+              Serviços completos de detetive particular em Brasília DF. Investigação profissional 
+              com preços justos, metodologia avançada e resultados comprovados no Distrito Federal.
             </p>
             
             {/* Quick Stats */}

@@ -4,7 +4,7 @@ import TrustBadges from "./TrustBadges";
 import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const HeroSection = () => {
-  const message = "Olá! Gostaria de agendar minha consulta GRATUITA de investigação cibernética.";
+  const message = "Olá! Gostaria de agendar minha consulta GRATUITA com o detetive particular DF.";
   
   const handleWhatsAppClick = () => {
     openWhatsApp(WHATSAPP_NUMBER, message);
@@ -29,14 +29,15 @@ const HeroSection = () => {
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
               <span className="bg-gradient-gold bg-clip-text text-transparent">
-                INVESTIGAÇÃO
+                DETETIVE PARTICULAR
               </span>
               <br />
-              CIBERNÉTICA
+              BRASÍLIA DF
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Resolva seu caso em <strong className="text-primary">72 horas</strong> com os especialistas 
-              mais experientes do Brasil. <strong className="text-foreground">Primeira consulta GRATUITA!</strong>
+              Detetive particular DF com <strong className="text-primary">preço justo</strong> e resultados em 
+              <strong className="text-primary">72 horas</strong>. Especialistas em investigação cibernética em Brasília. 
+              <strong className="text-foreground">Primeira consulta GRATUITA!</strong>
             </p>
           </div>
 

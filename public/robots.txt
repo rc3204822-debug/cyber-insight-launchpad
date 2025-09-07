@@ -12,3 +12,9 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Sitemap
+Sitemap: https://agenciainvestigue.com/sitemap.xml
+
+# SEO optimized for detetive particular df keywords
+# Main focus: detetive particular brasilia, detetive df, detetive particular df preço

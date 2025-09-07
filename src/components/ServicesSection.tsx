@@ -58,11 +58,11 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Nossos <span className="bg-gradient-gold bg-clip-text text-transparent">Serviços</span>
+            Detetive Particular DF - <span className="bg-gradient-gold bg-clip-text text-transparent">Serviços</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Oferecemos uma gama completa de serviços de investigação cibernética 
-            com metodologia profissional e resultados comprovados.
+            Oferecemos uma gama completa de serviços como detetive particular em Brasília DF 
+            com preço justo, metodologia profissional e resultados comprovados no Distrito Federal.
           </p>
         </div>
 
@@ -103,17 +103,17 @@ const ServicesSection = () => {
           <div className="bg-gradient-dark rounded-2xl p-8 md:p-12 border border-border">
             <Computer className="w-16 h-16 text-primary mx-auto mb-6" />
             <h3 className="text-3xl font-bold text-foreground mb-4">
-              Emergência Cibernética?
+              Detetive Particular DF - Emergência?
             </h3>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Nossa equipe especializada está disponível 24 horas por dia para casos urgentes. 
-              Tempo é crucial em investigações digitais.
+              Nosso detetive em Brasília DF está disponível 24 horas por dia para casos urgentes. 
+              Tempo é crucial em investigações digitais no Distrito Federal.
             </p>
             <Button 
               size="lg" 
               className="bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow text-lg px-8 py-4"
               onClick={() => {
-                const message = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato. Caso urgente.";
+                const message = "🚨 EMERGÊNCIA! Preciso do detetive particular DF com urgência. Caso emergencial.";
                 openWhatsApp(WHATSAPP_NUMBER, message);
               }}
             >
