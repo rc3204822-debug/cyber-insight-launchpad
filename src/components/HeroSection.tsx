@@ -23,8 +23,9 @@ const HeroSection = () => {
             <div className="w-32 h-32 bg-gradient-gold rounded-full flex items-center justify-center shadow-glow mx-auto mb-6">
               <img 
                 src="/lovable-uploads/fac86c3c-5386-47e2-b05f-625924171513.png" 
-                alt="Agência Investigue Logo" 
+                alt="Agência Investigue - Detetive Particular DF" 
                 className="w-24 h-24 object-contain"
+                loading="lazy"
               />
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">

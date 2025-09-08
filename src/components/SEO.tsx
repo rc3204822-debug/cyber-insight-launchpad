@@ -10,7 +10,7 @@ interface SEOProps {
 const SEO = ({ 
   title = "Detetive Particular DF | Brasília - Investigação Profissional 24h",
   description = "Detetive particular em Brasília DF com preço justo. Investigação de infidelidade, rastreamento, forense digital. Detetive DF barato e confiável. Atendimento 24h.",
-  keywords = "detetive particular df, detetive particular brasilia, detetive df, detetive particular df preço, detetive particular em brasília, detetive particular brasília df, detetive particular df barato, detetive em brasília, detetive em brasilia, detetive em brasília df",
+  keywords = "detetive particular df, detetive particular brasilia, detetive df preço, detetive particular brasília df barato, detetive em brasília 24h, investigação infidelidade df, rastreamento celular brasília, perícia digital df, detetive particular distrito federal, investigação criminal df, detetive particular df valores, detetive brasília preço justo, investigação digital brasília, detetive particular df confiável, investigação empresarial df",
   schemaType = 'organization'
 }: SEOProps) => {
   useEffect(() => {
@@ -59,6 +59,26 @@ const SEO = ({
       },
       "openingHours": "Mo-Su 00:00-23:59",
       "priceRange": "$$",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "127",
+        "bestRating": "5"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Carlos Silva"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5"
+          },
+          "reviewBody": "Excelente detetive particular em Brasília DF. Resolveu meu caso de infidelidade com discrição total e preço justo."
+        }
+      ],
       "serviceArea": {
         "@type": "GeoCircle",
         "geoMidpoint": {

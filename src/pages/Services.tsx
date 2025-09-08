@@ -270,8 +270,9 @@ const Services = () => {
             </Button>
           </div>
         </div>
-      </section>
-
+        </section>
+      </main>
+      
       <Footer />
       <WhatsAppFloat />
     </div>

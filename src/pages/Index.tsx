@@ -9,6 +9,8 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import SEO from "@/components/SEO";
+import FAQSection from "@/components/FAQSection";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const Index = () => {
   return (
@@ -16,12 +18,16 @@ const Index = () => {
       <SEO />
       <ConversionBanner />
       <Header />
-      <HeroSection />
-      <OfferSection />
-      <ServicesSection />
-      <SocialProof />
-      <AboutSection />
-      <ContactSection />
+      <Breadcrumbs />
+      <main>
+        <HeroSection />
+        <OfferSection />
+        <ServicesSection />
+        <SocialProof />
+        <AboutSection />
+        <FAQSection />
+        <ContactSection />
+      </main>
       <Footer />
       <WhatsAppFloat />
     </div>
