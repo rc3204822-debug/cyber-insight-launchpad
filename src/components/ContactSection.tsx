@@ -92,7 +92,7 @@ _Enviado via formulário do site_
               <CardTitle className="text-foreground">Telefone</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-primary text-lg font-semibold mb-2">(61) 9 8284-4543</p>
+              <p className="text-primary text-lg font-semibold mb-2">(61) 3356-3925</p>
               <p className="text-muted-foreground text-sm mb-2">WhatsApp disponível 24h</p>
               <p className="text-muted-foreground text-sm">Resposta instantânea</p>
               <div className="mt-4">
@@ -257,7 +257,7 @@ _Enviado via formulário do site_
                 <div className="space-y-4">
                   <Button className="w-full bg-green-500 hover:bg-green-600 text-white text-lg py-3">
                     <MessageCircle className="w-5 h-5 mr-2" />
-                    WhatsApp: (61) 9 8284-4543
+                    WhatsApp: (61) 3356-3925
                   </Button>
                   <Button 
                     onClick={() => {

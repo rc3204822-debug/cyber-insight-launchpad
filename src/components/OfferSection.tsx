@@ -153,7 +153,7 @@ const OfferSection = () => {
               Atendimento Direto via WhatsApp
             </h3>
             <p className="text-lg text-muted-foreground mb-4">
-              <strong className="text-green-500">(61) 9 8284-4543</strong>
+              <strong className="text-green-500">(61) 3356-3925</strong>
             </p>
             <p className="text-muted-foreground">
               Resposta instantânea • Disponível 24h • Primeira consulta sempre gratuita
