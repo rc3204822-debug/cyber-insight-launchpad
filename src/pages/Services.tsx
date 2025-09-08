@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import ConversionBanner from "@/components/ConversionBanner";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import SEO from "@/components/SEO";
+import { useNavigate } from "react-router-dom";
 import { 
   Search, 
   Smartphone, 
@@ -23,6 +24,7 @@ import {
 import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const Services = () => {
+  const navigate = useNavigate();
   const services = [
     {
       icon: <Search className="w-12 h-12" />,
@@ -122,7 +124,7 @@ const Services = () => {
   };
 
   const handleBackToHome = () => {
-    window.location.href = '/';
+    navigate('/');
   };
 
   return (

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const Header = () => {
@@ -36,8 +37,8 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#home" className="text-foreground hover:text-primary transition-colors">Início</a>
-            <a href="/services" className="text-foreground hover:text-primary transition-colors">Serviços</a>
-            <a href="/precos" className="text-foreground hover:text-primary transition-colors">Preços</a>
+            <Link to="/services" className="text-foreground hover:text-primary transition-colors">Serviços</Link>
+            <Link to="/precos" className="text-foreground hover:text-primary transition-colors">Preços</Link>
             <a href="#about" className="text-foreground hover:text-primary transition-colors">Sobre</a>
             <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contato</a>
           </nav>
@@ -72,8 +73,8 @@ const Header = () => {
           <div className="md:hidden mt-4 pb-4 border-t border-border">
             <nav className="flex flex-col space-y-4 mt-4">
               <a href="#home" className="text-foreground hover:text-primary transition-colors">Início</a>
-              <a href="/services" className="text-foreground hover:text-primary transition-colors">Serviços</a>
-              <a href="/precos" className="text-foreground hover:text-primary transition-colors">Preços</a>
+              <Link to="/services" className="text-foreground hover:text-primary transition-colors">Serviços</Link>
+              <Link to="/precos" className="text-foreground hover:text-primary transition-colors">Preços</Link>
               <a href="#about" className="text-foreground hover:text-primary transition-colors">Sobre</a>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contato</a>
               <div className="flex flex-col space-y-2 pt-4">
