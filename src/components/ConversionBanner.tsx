@@ -34,29 +34,58 @@ const ConversionBanner = () => {
 
   return (
     <div className="fixed top-0 w-full z-50 bg-gradient-to-r from-red-600 to-red-500 text-white py-2 px-4 shadow-lg">
-      <div className="container mx-auto flex items-center justify-between text-sm">
-        <div className="flex items-center space-x-2">
-          <AlertTriangle className="w-4 h-4" />
-          <span className="font-semibold">OFERTA LIMITADA:</span>
-          <span>Primeira consulta GRATUITA - Termina em:</span>
-        </div>
-        <div className="flex items-center space-x-4">
+      <div className="container mx-auto">
+        {/* Desktop Layout */}
+        <div className="hidden md:flex items-center justify-between text-sm">
           <div className="flex items-center space-x-2">
-            <Clock className="w-4 h-4" />
-            <span className="font-bold">
-              {String(timeLeft.hours).padStart(2, '0')}:
-              {String(timeLeft.minutes).padStart(2, '0')}:
-              {String(timeLeft.seconds).padStart(2, '0')}
-            </span>
+            <AlertTriangle className="w-4 h-4" />
+            <span className="font-semibold">OFERTA LIMITADA:</span>
+            <span>Primeira consulta GRATUITA - Termina em:</span>
           </div>
-          <Button 
-            size="sm" 
-            variant="outline" 
-            className="bg-white text-red-600 hover:bg-gray-100"
-            onClick={handleWhatsAppClick}
-          >
-            GARANTIR AGORA
-          </Button>
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              <Clock className="w-4 h-4" />
+              <span className="font-bold">
+                {String(timeLeft.hours).padStart(2, '0')}:
+                {String(timeLeft.minutes).padStart(2, '0')}:
+                {String(timeLeft.seconds).padStart(2, '0')}
+              </span>
+            </div>
+            <Button 
+              size="sm" 
+              variant="outline" 
+              className="bg-white text-red-600 hover:bg-gray-100"
+              onClick={handleWhatsAppClick}
+            >
+              GARANTIR AGORA
+            </Button>
+          </div>
+        </div>
+
+        {/* Mobile Layout */}
+        <div className="md:hidden flex flex-col space-y-2 text-xs">
+          <div className="flex items-center justify-center space-x-2">
+            <AlertTriangle className="w-3 h-3" />
+            <span className="font-semibold">OFERTA LIMITADA</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <Clock className="w-3 h-3" />
+              <span className="font-bold">
+                {String(timeLeft.hours).padStart(2, '0')}:
+                {String(timeLeft.minutes).padStart(2, '0')}:
+                {String(timeLeft.seconds).padStart(2, '0')}
+              </span>
+            </div>
+            <Button 
+              size="sm" 
+              variant="outline" 
+              className="bg-white text-red-600 hover:bg-gray-100 text-xs px-3 py-1"
+              onClick={handleWhatsAppClick}
+            >
+              GARANTIR
+            </Button>
+          </div>
         </div>
       </div>
     </div>
