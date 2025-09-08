@@ -22,6 +22,20 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const handleContactClick = () => {
+    if (window.location.pathname === '/') {
+      // Se já estiver na página inicial, apenas rola para a seção
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Se estiver em outra página, navega para home com hash
+      window.location.href = '/#contact';
+    }
+    setIsMenuOpen(false);
+  };
+
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
@@ -46,7 +60,7 @@ const Header = () => {
             <Link to="/services" className="text-foreground hover:text-primary transition-colors">Serviços</Link>
             <Link to="/precos" className="text-foreground hover:text-primary transition-colors">Preços</Link>
             <a href="#about" className="text-foreground hover:text-primary transition-colors">Sobre</a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contato</a>
+            <button onClick={handleContactClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Contato</button>
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -82,7 +96,7 @@ const Header = () => {
               <Link to="/services" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Serviços</Link>
               <Link to="/precos" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Preços</Link>
               <a href="#about" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Sobre</a>
-              <a href="#contact" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Contato</a>
+              <button onClick={handleContactClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer text-left">Contato</button>
               <div className="flex flex-col space-y-2 pt-4">
                 <Button 
                   variant="outline" 
