@@ -8,10 +8,15 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleOrcamentoClick = () => {
-    // Scroll para a seção de contato onde está o formulário de orçamento
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+    if (window.location.pathname === '/') {
+      // Se já estiver na página inicial, apenas rola para a seção de contato
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Se estiver em outra página, navega para home com hash
+      window.location.href = '/#contact';
     }
     setIsMenuOpen(false);
   };
