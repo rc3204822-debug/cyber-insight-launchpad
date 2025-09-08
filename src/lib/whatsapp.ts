@@ -19,4 +19,4 @@ export const openWhatsApp = (phoneNumber: string, message: string) => {
   }
 };
 
-export const WHATSAPP_NUMBER = "5561982844543";
+export const WHATSAPP_NUMBER = "6133563925";

@@ -45,7 +45,7 @@ const SEO = ({
       "name": "Agência Investigue - Detetive Particular DF",
       "description": "Detetive particular em Brasília DF especializado em investigação de infidelidade, rastreamento, forense digital e crimes cibernéticos.",
       "url": "https://agenciainvestigue.com",
-      "telephone": "+5561982844543",
+      "telephone": "+556133563925",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Brasília",
