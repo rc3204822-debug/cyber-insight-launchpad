@@ -13,11 +13,17 @@ const Header = () => {
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMenuOpen(false);
   };
 
   const handleEmergenciaClick = () => {
     const message = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato. Caso urgente.";
     openWhatsApp(WHATSAPP_NUMBER, message);
+    setIsMenuOpen(false);
+  };
+
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
   };
 
   return (
@@ -72,11 +78,11 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border">
             <nav className="flex flex-col space-y-4 mt-4">
-              <a href="#home" className="text-foreground hover:text-primary transition-colors">Início</a>
-              <Link to="/services" className="text-foreground hover:text-primary transition-colors">Serviços</Link>
-              <Link to="/precos" className="text-foreground hover:text-primary transition-colors">Preços</Link>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors">Sobre</a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contato</a>
+              <a href="#home" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Início</a>
+              <Link to="/services" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Serviços</Link>
+              <Link to="/precos" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Preços</Link>
+              <a href="#about" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Sobre</a>
+              <a href="#contact" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Contato</a>
               <div className="flex flex-col space-y-2 pt-4">
                 <Button 
                   variant="outline" 
