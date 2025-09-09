@@ -33,7 +33,7 @@ const ConversionBanner = () => {
   }, []);
 
   return (
-    <div className="fixed top-0 w-full z-50 bg-gradient-to-r from-red-600 to-red-500 text-white py-2 px-4 shadow-lg">
+    <div className="fixed top-0 w-full z-50 bg-destructive text-destructive-foreground py-2 px-4 shadow-lg">
       <div className="container mx-auto">
         {/* Desktop Layout */}
         <div className="hidden md:flex items-center justify-between text-sm">
@@ -54,7 +54,7 @@ const ConversionBanner = () => {
             <Button 
               size="sm" 
               variant="outline" 
-              className="bg-white text-red-600 hover:bg-gray-100"
+              className="bg-background text-destructive hover:bg-muted border-background"
               onClick={handleWhatsAppClick}
             >
               GARANTIR AGORA
@@ -80,7 +80,7 @@ const ConversionBanner = () => {
             <Button 
               size="sm" 
               variant="outline" 
-              className="bg-white text-red-600 hover:bg-gray-100 text-xs px-3 py-1"
+              className="bg-background text-destructive hover:bg-muted border-background text-xs px-3 py-1"
               onClick={handleWhatsAppClick}
             >
               GARANTIR
