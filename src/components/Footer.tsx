@@ -22,15 +22,15 @@ const Footer = () => {
               Oferecemos soluções profissionais para casos cibernéticos complexos.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-card border border-border rounded-full flex items-center justify-center hover:border-primary transition-colors">
+              <button className="w-10 h-10 bg-card border border-border rounded-full flex items-center justify-center hover:border-primary transition-colors" onClick={() => window.open('https://facebook.com', '_blank')}>
                 <Facebook className="w-5 h-5 text-muted-foreground hover:text-primary" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-card border border-border rounded-full flex items-center justify-center hover:border-primary transition-colors">
+              </button>
+              <button className="w-10 h-10 bg-card border border-border rounded-full flex items-center justify-center hover:border-primary transition-colors" onClick={() => window.open('https://instagram.com', '_blank')}>
                 <Instagram className="w-5 h-5 text-muted-foreground hover:text-primary" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-card border border-border rounded-full flex items-center justify-center hover:border-primary transition-colors">
+              </button>
+              <button className="w-10 h-10 bg-card border border-border rounded-full flex items-center justify-center hover:border-primary transition-colors" onClick={() => window.open('https://linkedin.com', '_blank')}>
                 <Linkedin className="w-5 h-5 text-muted-foreground hover:text-primary" />
-              </a>
+              </button>
             </div>
           </div>
 
