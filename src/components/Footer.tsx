@@ -1,4 +1,5 @@
 import { Shield, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -37,11 +38,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-6">Serviços</h4>
             <ul className="space-y-3">
-              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Investigação Digital</a></li>
-              <li><a href="/precos" className="text-muted-foreground hover:text-primary transition-colors">Preços e Valores</a></li>
-              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Rastreamento de Celulares</a></li>
-              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Crimes Cibernéticos</a></li>
-              <li><a href="/services" className="text-muted-foreground hover:text-primary transition-colors">Recuperação de Dados</a></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Investigação Digital</Link></li>
+              <li><Link to="/precos" className="text-muted-foreground hover:text-primary transition-colors">Preços e Valores</Link></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Rastreamento de Celulares</Link></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Crimes Cibernéticos</Link></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Recuperação de Dados</Link></li>
             </ul>
           </div>
 
@@ -80,9 +81,9 @@ const Footer = () => {
               © 2024 Agência Investigue. Todos os direitos reservados.
             </div>
             <div className="flex space-x-6 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Política de Privacidade</a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Termos de Serviço</a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Código de Ética</a>
+              <button className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Política de Privacidade</button>
+              <button className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Termos de Serviço</button>
+              <button className="text-muted-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Código de Ética</button>
             </div>
           </div>
         </div>
