@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import { 
   Search, 
   Smartphone, 
@@ -14,6 +15,7 @@ import {
 import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const ServicesSection = () => {
+  const navigate = useNavigate();
   const services = [
     {
       icon: <Search className="w-8 h-8" />,
@@ -90,7 +92,7 @@ const ServicesSection = () => {
                 <Button 
                   variant="outline" 
                   className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  onClick={() => window.location.href = '/services'}
+                  onClick={() => navigate('/services')}
                 >
                   Saiba Mais
                 </Button>

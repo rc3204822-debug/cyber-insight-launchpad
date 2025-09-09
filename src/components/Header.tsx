@@ -1,22 +1,44 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleHomeClick = () => {
+    if (location.pathname === '/') {
+      scrollToSection('home');
+    } else {
+      navigate('/');
+    }
+    setIsMenuOpen(false);
+  };
+
+  const handleAboutClick = () => {
+    if (location.pathname === '/') {
+      scrollToSection('about');
+    } else {
+      navigate('/', { state: { scrollTo: 'about' } });
+    }
+    setIsMenuOpen(false);
+  };
 
   const handleOrcamentoClick = () => {
-    if (window.location.pathname === '/') {
-      // Se já estiver na página inicial, apenas rola para a seção de contato
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
+    if (location.pathname === '/') {
+      scrollToSection('contact');
     } else {
-      // Se estiver em outra página, navega para home com hash
-      window.location.href = '/#contact';
+      navigate('/', { state: { scrollTo: 'contact' } });
     }
     setIsMenuOpen(false);
   };
@@ -28,15 +50,10 @@ const Header = () => {
   };
 
   const handleContactClick = () => {
-    if (window.location.pathname === '/') {
-      // Se já estiver na página inicial, apenas rola para a seção
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
+    if (location.pathname === '/') {
+      scrollToSection('contact');
     } else {
-      // Se estiver em outra página, navega para home com hash
-      window.location.href = '/#contact';
+      navigate('/', { state: { scrollTo: 'contact' } });
     }
     setIsMenuOpen(false);
   };
@@ -61,10 +78,10 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">Início</a>
+            <button onClick={handleHomeClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Início</button>
             <Link to="/services" className="text-foreground hover:text-primary transition-colors">Serviços</Link>
             <Link to="/precos" className="text-foreground hover:text-primary transition-colors">Preços</Link>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">Sobre</a>
+            <button onClick={handleAboutClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Sobre</button>
             <button onClick={handleContactClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Contato</button>
           </nav>
 
@@ -97,10 +114,10 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border">
             <nav className="flex flex-col space-y-4 mt-4">
-              <a href="#home" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Início</a>
+              <button onClick={handleHomeClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer text-left">Início</button>
               <Link to="/services" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Serviços</Link>
               <Link to="/precos" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Preços</Link>
-              <a href="#about" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Sobre</a>
+              <button onClick={handleAboutClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer text-left">Sobre</button>
               <button onClick={handleContactClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer text-left">Contato</button>
               <div className="flex flex-col space-y-2 pt-4">
                 <Button 
