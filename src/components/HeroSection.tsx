@@ -30,14 +30,14 @@ const HeroSection = () => {
             </div>
             <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6">
               <span className="bg-gradient-gold bg-clip-text text-transparent">
-                DETETIVE PARTICULAR
+                DETETIVE PARTICULAR EM BRASÍLIA
               </span>
               <br />
-              BRASÍLIA DF
+              DISTRITO FEDERAL - DF
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Detetive particular DF com <strong className="text-primary">preço justo</strong> e resultados em 
-              <strong className="text-primary">72 horas</strong>. Especialistas em investigação cibernética em Brasília. 
+              Investigador particular em Brasília DF com <strong className="text-primary">preço justo</strong> e resultados em 
+              <strong className="text-primary">72 horas</strong>. Especialistas em investigação de infidelidade conjugal no DF. 
               <strong className="text-foreground">Primeira consulta GRATUITA!</strong>
             </p>
           </div>
@@ -105,18 +105,18 @@ const HeroSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
             <div className="bg-card border border-border rounded-lg p-6 hover:shadow-gold transition-all duration-300">
               <Lock className="w-12 h-12 text-primary mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">Sigilo Absoluto</h3>
-              <p className="text-muted-foreground">Total confidencialidade em todos os processos investigativos</p>
+              <h2 className="text-xl font-semibold text-foreground mb-2">Investigação Sigilosa em Brasília</h2>
+              <p className="text-muted-foreground">Detetive particular DF com confidencialidade absoluta em todos os processos</p>
             </div>
             <div className="bg-card border border-border rounded-lg p-6 hover:shadow-gold transition-all duration-300">
               <Zap className="w-12 h-12 text-primary mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">Resultados Rápidos</h3>
-              <p className="text-muted-foreground">Resolvemos 80% dos casos em até 72 horas</p>
+              <h2 className="text-xl font-semibold text-foreground mb-2">Resultados em 72h no DF</h2>
+              <p className="text-muted-foreground">Investigador particular em Brasília resolve 80% dos casos rapidamente</p>
             </div>
             <div className="bg-card border border-border rounded-lg p-6 hover:shadow-gold transition-all duration-300">
               <Shield className="w-12 h-12 text-primary mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold text-foreground mb-2">Garantia Total</h3>
-              <p className="text-muted-foreground">100% de satisfação ou seu dinheiro de volta</p>
+              <h2 className="text-xl font-semibold text-foreground mb-2">Detetive DF Garantido</h2>
+              <p className="text-muted-foreground">Serviços de investigação em Brasília com garantia de satisfação</p>
             </div>
           </div>
         </div>

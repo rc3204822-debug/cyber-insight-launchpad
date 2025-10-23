@@ -19,21 +19,21 @@ const ServicesSection = () => {
   const services = [
     {
       icon: <Search className="w-8 h-8" />,
-      title: "Investigação Digital Forense",
-      description: "Análise completa de dispositivos eletrônicos e recuperação de dados perdidos ou deletados.",
-      features: ["Recuperação de dados", "Análise de dispositivos", "Perícia digital"]
+      title: "Perícia Digital Forense em Brasília",
+      description: "Investigador particular DF especializado em análise de dispositivos eletrônicos e recuperação de dados.",
+      features: ["Recuperação de dados", "Perícia forense digital", "Análise de celulares"]
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: "Rastreamento de Celulares",
-      description: "Localização e monitoramento de dispositivos móveis com tecnologia de geolocalização avançada.",
-      features: ["Localização GPS", "Histórico de movimentação", "Monitoramento remoto"]
+      title: "Rastreamento de Celular em Brasília",
+      description: "Detetive particular DF oferece localização e monitoramento de dispositivos no Distrito Federal.",
+      features: ["Rastreamento celular DF", "Localização GPS Brasília", "Monitoramento digital"]
     },
     {
       icon: <UserX className="w-8 h-8" />,
-      title: "Investigação de Infidelidade",
-      description: "Investigação discreta de suspeitas de traição com evidências digitais sólidas.",
-      features: ["Monitoramento de redes sociais", "Análise de comunicações", "Relatório detalhado"]
+      title: "Investigação Conjugal em Brasília DF",
+      description: "Investigação de infidelidade conjugal no DF com detetive particular discreto e evidências sólidas.",
+      features: ["Investigação de traição DF", "Monitoramento conjugal", "Provas de infidelidade"]
     },
     {
       icon: <CreditCard className="w-8 h-8" />,
@@ -60,11 +60,11 @@ const ServicesSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Detetive Particular DF - <span className="bg-gradient-gold bg-clip-text text-transparent">Serviços</span>
+            Serviços de <span className="bg-gradient-gold bg-clip-text text-transparent">Investigação Particular em Brasília DF</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Oferecemos uma gama completa de serviços como detetive particular em Brasília DF 
-            com preço justo, metodologia profissional e resultados comprovados no Distrito Federal.
+            Investigador particular em Brasília oferece serviços completos de investigação conjugal no DF 
+            com preço justo, perícia digital forense e resultados comprovados no Distrito Federal.
           </p>
         </div>
 
@@ -104,12 +104,12 @@ const ServicesSection = () => {
         <div className="text-center mt-16">
           <div className="bg-gradient-dark rounded-2xl p-8 md:p-12 border border-border">
             <Computer className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h3 className="text-3xl font-bold text-foreground mb-4">
-              Detetive Particular DF - Emergência?
-            </h3>
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              Detetive Particular em Brasília - Atendimento 24h
+            </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Nosso detetive em Brasília DF está disponível 24 horas por dia para casos urgentes. 
-              Tempo é crucial em investigações digitais no Distrito Federal.
+              Investigador particular no DF disponível 24 horas para casos de investigação urgentes em Brasília. 
+              Serviços de detetive particular no Distrito Federal com atendimento emergencial.
             </p>
             <Button 
               size="lg" 

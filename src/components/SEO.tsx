@@ -8,9 +8,9 @@ interface SEOProps {
 }
 
 const SEO = ({ 
-  title = "Detetive Particular DF | Brasília - Investigação Profissional 24h",
-  description = "Detetive particular em Brasília DF com preço justo. Investigação de infidelidade, rastreamento, forense digital. Detetive DF barato e confiável. Atendimento 24h.",
-  keywords = "detetive particular df, detetive particular brasilia, detetive df preço, detetive particular brasília df barato, detetive em brasília 24h, investigação infidelidade df, rastreamento celular brasília, perícia digital df, detetive particular distrito federal, investigação criminal df, detetive particular df valores, detetive brasília preço justo, investigação digital brasília, detetive particular df confiável, investigação empresarial df",
+  title = "Detetive Particular em Brasília DF | Investigador DF 24h - Preço Justo",
+  description = "Investigador particular em Brasília DF especializado em investigação conjugal. Detetive particular Brasília com preço justo, perícia digital e rastreamento. Consulta grátis 24h no DF.",
+  keywords = "detetive particular em brasília, investigador particular df, detetive particular brasília df, investigação conjugal df, investigação de infidelidade brasília, detetive em brasília, serviços de investigação df, detetive particular distrito federal, rastreamento celular brasília, perícia digital df, investigação particular brasília, detetive df preço, investigador particular brasília 24h, detetive particular df barato, investigação digital brasília",
   schemaType = 'organization'
 }: SEOProps) => {
   useEffect(() => {

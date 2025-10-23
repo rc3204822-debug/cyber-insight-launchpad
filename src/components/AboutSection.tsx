@@ -52,11 +52,11 @@ const AboutSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Por Que Escolher Nosso <span className="bg-gradient-gold bg-clip-text text-transparent">Detetive DF</span>?
+            Por Que Escolher Nosso <span className="bg-gradient-gold bg-clip-text text-transparent">Detetive Particular em Brasília</span>?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Somos detetive particular em Brasília DF com expertise reconhecida nacionalmente. 
-            O melhor detetive particular DF barato com tecnologia de ponta para resultados excepcionais.
+            Investigador particular em Brasília DF com expertise reconhecida nacionalmente. 
+            Serviços de investigação particular no Distrito Federal com tecnologia de ponta e preço justo.
           </p>
         </div>
 
@@ -113,9 +113,9 @@ const AboutSection = () => {
               Nossa Missão
             </h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Como detetive particular em Brasília DF, oferecemos serviços de investigação de excelência. 
-              Nosso detetive em Brasília utiliza metodologias científicas e ferramentas de última geração 
-              para garantir resultados precisos e confiáveis no Distrito Federal.
+              Como investigador particular em Brasília DF, oferecemos serviços de investigação conjugal de excelência. 
+              Nosso detetive particular em Brasília utiliza metodologias científicas e ferramentas de perícia digital 
+              para garantir resultados precisos em investigação de infidelidade no Distrito Federal.
             </p>
             <div className="bg-card border border-border rounded-lg p-6">
               <h4 className="text-lg font-semibold text-foreground mb-4">Nossos Valores</h4>
