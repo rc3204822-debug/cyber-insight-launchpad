@@ -1,9 +1,38 @@
-import { Shield, Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Shield, Phone, Mail, MapPin, Facebook, Instagram, Linkedin, MessageCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const Footer = () => {
   return (
     <footer className="bg-gradient-dark border-t border-border">
+      {/* WhatsApp CTA Section no Footer */}
+      <div className="bg-green-600 py-8">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Precisa de um Detetive Particular em Brasília?
+              </h3>
+              <p className="text-green-100">
+                Atendimento 24h • Consulta gratuita • Resultados em 72h
+              </p>
+            </div>
+            <Button 
+              size="lg"
+              onClick={() => {
+                const message = "Olá! Vi o site e gostaria de falar com o detetive particular em Brasília. Consulta gratuita.";
+                openWhatsApp(WHATSAPP_NUMBER, message);
+              }}
+              className="bg-white hover:bg-gray-100 text-green-600 text-lg px-8 py-6 font-bold shadow-xl"
+            >
+              <MessageCircle className="w-6 h-6 mr-2" />
+              FALAR AGORA NO WHATSAPP
+            </Button>
+          </div>
+        </div>
+      </div>
+
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and Description */}
@@ -39,6 +68,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-foreground mb-6">Serviços</h4>
             <ul className="space-y-3">
               <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Investigação Digital</Link></li>
+              <li><Link to="/blog" className="text-muted-foreground hover:text-primary transition-colors">Blog e Artigos</Link></li>
               <li><Link to="/precos" className="text-muted-foreground hover:text-primary transition-colors">Preços e Valores</Link></li>
               <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Rastreamento de Celulares</Link></li>
               <li><Link to="/services" className="text-muted-foreground hover:text-primary transition-colors">Crimes Cibernéticos</Link></li>
@@ -55,6 +85,17 @@ const Footer = () => {
                 <div>
                   <p className="text-foreground font-semibold">(61) 3356-3925</p>
                   <p className="text-sm text-muted-foreground">WhatsApp 24h - Resposta instantânea</p>
+                  <Button 
+                    size="sm"
+                    onClick={() => {
+                      const message = "Olá! Gostaria de falar com o detetive particular em Brasília.";
+                      openWhatsApp(WHATSAPP_NUMBER, message);
+                    }}
+                    className="bg-green-500 hover:bg-green-600 text-white mt-2"
+                  >
+                    <MessageCircle className="w-4 h-4 mr-1" />
+                    WhatsApp
+                  </Button>
                 </div>
               </div>
               <div className="flex items-start space-x-3">

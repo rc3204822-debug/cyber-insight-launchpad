@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import FAQSection from "@/components/FAQSection";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import CasesSection from "@/components/CasesSection";
 
 const Index = () => {
   const location = useLocation();
@@ -42,6 +43,7 @@ const Index = () => {
         <ServicesSection />
         <SocialProof />
         <AboutSection />
+        <CasesSection />
         <FAQSection />
         <ContactSection />
       </main>

@@ -312,6 +312,28 @@ _Enviado via formulário do site_
             </div>
           </div>
         </div>
+
+        {/* Google Maps */}
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+            Nossa Localização em Brasília DF
+          </h3>
+          <div className="rounded-xl overflow-hidden shadow-2xl border-2 border-border max-w-5xl mx-auto">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61510.87684238838!2d-47.92919672343755!3d-15.794228700000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3aed55b99c45%3A0x85e4f2da3a4e5d0!2zQnJhc8OtbGlhLCBERg!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização Detetive Particular em Brasília DF"
+            />
+          </div>
+          <p className="text-center text-muted-foreground mt-4">
+            Atendemos todo o Distrito Federal e região metropolitana de Brasília
+          </p>
+        </div>
       </div>
     </section>
   );

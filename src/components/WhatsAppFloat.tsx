@@ -23,22 +23,22 @@ const WhatsAppFloat = () => {
         <div className={`transition-all duration-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
           <Button
             onClick={handleWhatsAppClick}
-            className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-16 h-16 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
+            className="bg-green-500 hover:bg-green-600 text-white rounded-full w-20 h-20 shadow-2xl hover:shadow-3xl transition-all duration-300 animate-pulse border-4 border-green-400/50"
           >
-            <MessageCircle className="w-8 h-8" />
+            <MessageCircle className="w-10 h-10" />
           </Button>
         </div>
       </div>
 
       {/* WhatsApp Tooltip */}
       {isVisible && (
-        <div className="fixed bottom-24 right-6 z-40">
-          <div className="bg-primary text-primary-foreground px-4 py-2 rounded-lg shadow-lg text-sm font-medium animate-bounce">
+        <div className="fixed bottom-28 right-6 z-40 hidden md:block">
+          <div className="bg-green-500 text-white px-6 py-3 rounded-lg shadow-2xl text-base font-bold animate-bounce border-2 border-green-400">
             <div className="flex items-center space-x-2">
-              <Phone className="w-4 h-4" />
-              <span>Consulta GRÁTIS no WhatsApp!</span>
+              <MessageCircle className="w-5 h-5" />
+              <span>Consulta GRÁTIS Agora!</span>
             </div>
-            <div className="absolute bottom-0 right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-primary transform translate-y-full"></div>
+            <div className="absolute bottom-0 right-6 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-green-500 transform translate-y-full"></div>
           </div>
         </div>
       )}

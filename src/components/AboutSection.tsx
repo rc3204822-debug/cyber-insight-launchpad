@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { 
   Award, 
   Users, 
@@ -7,8 +8,10 @@ import {
   TrendingUp,
   Star,
   CheckCircle2,
-  Shield
+  Shield,
+  MessageCircle
 } from "lucide-react";
+import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const AboutSection = () => {
   const stats = [
@@ -137,30 +140,52 @@ const AboutSection = () => {
           </div>
         </div>
 
-        {/* Testimonials */}
-        <div>
-          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
-            O Que Nossos Clientes Dizem
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-card border-border hover:shadow-gold transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-primary fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-4">"{testimonial.text}"</p>
-                  <div>
-                    <div className="text-foreground font-semibold">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Testimonials */}
+          <div>
+            <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
+              O Que Nossos Clientes Dizem
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="bg-card border-border hover:shadow-gold transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex mb-4">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="w-5 h-5 text-primary fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-muted-foreground italic mb-4">"{testimonial.text}"</p>
+                    <div>
+                      <div className="text-foreground font-semibold">{testimonial.name}</div>
+                      <div className="text-sm text-muted-foreground">{testimonial.role}</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            {/* CTA após depoimentos */}
+            <div className="mt-12 bg-gradient-to-r from-primary/20 to-accent/20 border-2 border-primary rounded-2xl p-8 text-center">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Seja o Próximo Cliente Satisfeito
+              </h3>
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+                Mais de 500 casos resolvidos em Brasília DF. Detetive particular com experiência comprovada 
+                em investigação conjugal e perícia digital forense.
+              </p>
+              <Button 
+                size="lg"
+                onClick={() => {
+                  const message = "Olá! Vi os depoimentos e gostaria de contratar o detetive particular em Brasília. Consulta gratuita.";
+                  openWhatsApp(WHATSAPP_NUMBER, message);
+                }}
+                className="bg-green-500 hover:bg-green-600 text-white text-lg px-10 py-6"
+              >
+                <MessageCircle className="w-6 h-6 mr-2" />
+                Solicitar Orçamento Sigiloso
+              </Button>
+            </div>
           </div>
-        </div>
       </div>
     </section>
   );
