@@ -81,6 +81,7 @@ const Header = () => {
             <button onClick={handleHomeClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Início</button>
             <Link to="/services" className="text-foreground hover:text-primary transition-colors">Serviços</Link>
             <Link to="/precos" className="text-foreground hover:text-primary transition-colors">Preços</Link>
+            <Link to="/blog" className="text-foreground hover:text-primary transition-colors">Blog</Link>
             <button onClick={handleAboutClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Sobre</button>
             <button onClick={handleContactClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Contato</button>
           </nav>
@@ -117,6 +118,7 @@ const Header = () => {
               <button onClick={handleHomeClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer text-left">Início</button>
               <Link to="/services" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Serviços</Link>
               <Link to="/precos" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Preços</Link>
+              <Link to="/blog" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Blog</Link>
               <button onClick={handleAboutClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer text-left">Sobre</button>
               <button onClick={handleContactClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer text-left">Contato</button>
               <div className="flex flex-col space-y-2 pt-4">
