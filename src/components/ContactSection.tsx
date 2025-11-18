@@ -118,7 +118,7 @@ _Enviado via formulário do site_
               <CardTitle className="text-foreground">E-mail</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-primary text-lg font-semibold mb-2">contato@investigcib.com.br</p>
+              <p className="text-primary text-lg font-semibold mb-2">contato@investigadorregis.com.br</p>
               <p className="text-muted-foreground text-sm">Resposta em até 2 horas</p>
               <p className="text-muted-foreground text-sm">Casos urgentes: resposta imediata</p>
             </CardContent>
