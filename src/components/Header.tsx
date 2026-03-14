@@ -16,126 +16,99 @@ const Header = () => {
     }
   };
 
-  const handleHomeClick = () => {
+  const handleNavClick = (sectionId: string) => {
     if (location.pathname === '/') {
-      scrollToSection('home');
+      scrollToSection(sectionId);
     } else {
-      navigate('/');
+      navigate('/', { state: { scrollTo: sectionId } });
     }
     setIsMenuOpen(false);
   };
 
-  const handleAboutClick = () => {
-    if (location.pathname === '/') {
-      scrollToSection('about');
-    } else {
-      navigate('/', { state: { scrollTo: 'about' } });
-    }
-    setIsMenuOpen(false);
-  };
-
-  const handleOrcamentoClick = () => {
-    if (location.pathname === '/') {
-      scrollToSection('contact');
-    } else {
-      navigate('/', { state: { scrollTo: 'contact' } });
-    }
-    setIsMenuOpen(false);
-  };
-
-  const handleEmergenciaClick = () => {
-    const message = "🚨 EMERGÊNCIA CIBERNÉTICA! Preciso de atendimento imediato. Caso urgente.";
-    openWhatsApp(WHATSAPP_NUMBER, message);
-    setIsMenuOpen(false);
-  };
-
-  const handleContactClick = () => {
-    if (location.pathname === '/') {
-      scrollToSection('contact');
-    } else {
-      navigate('/', { state: { scrollTo: 'contact' } });
-    }
-    setIsMenuOpen(false);
-  };
-
-  const handleLinkClick = () => {
-    setIsMenuOpen(false);
-  };
+  const navItems = [
+    { label: 'Início', action: () => handleNavClick('home') },
+    { label: 'Serviços', link: '/services' },
+    { label: 'Preços', link: '/precos' },
+    { label: 'Blog', link: '/blog' },
+    { label: 'Sobre', action: () => handleNavClick('about') },
+    { label: 'Contato', action: () => handleNavClick('contact') },
+  ];
 
   return (
-    <header className="fixed top-12 w-full z-40 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4 py-4">
+    <header className="fixed top-[41px] w-full z-40 bg-background/80 backdrop-blur-md border-b border-border/50">
+      <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-gold rounded-full flex items-center justify-center shadow-glow">
-              <Shield className="w-6 h-6 text-primary-foreground" />
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center bg-card group-hover:border-primary/60 transition-colors">
+              <Shield className="w-5 h-5 text-primary" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-foreground">AGÊNCIA INVESTIGUE</h1>
-              <p className="text-sm text-muted-foreground">Investigação Cibernética</p>
+              <span className="text-base font-bold text-foreground tracking-wide" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                AGÊNCIA INVESTIGUE
+              </span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <button onClick={handleHomeClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Início</button>
-            <Link to="/services" className="text-foreground hover:text-primary transition-colors">Serviços</Link>
-            <Link to="/precos" className="text-foreground hover:text-primary transition-colors">Preços</Link>
-            <Link to="/blog" className="text-foreground hover:text-primary transition-colors">Blog</Link>
-            <button onClick={handleAboutClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Sobre</button>
-            <button onClick={handleContactClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer">Contato</button>
+          <nav className="hidden md:flex items-center space-x-8" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            {navItems.map((item) =>
+              item.link ? (
+                <Link key={item.label} to={item.link} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                  {item.label}
+                </Link>
+              ) : (
+                <button key={item.label} onClick={item.action} className="text-sm text-muted-foreground hover:text-foreground transition-colors bg-transparent border-0 p-0 cursor-pointer" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                  {item.label}
+                </button>
+              )
+            )}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
-            <Button 
-              variant="outline" 
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-              onClick={handleOrcamentoClick}
+          <div className="hidden md:block">
+            <Button
+              size="sm"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 text-sm font-medium"
+              style={{ fontFamily: "'DM Sans', sans-serif" }}
+              onClick={() => openWhatsApp(WHATSAPP_NUMBER, "Olá! Gostaria de solicitar um orçamento.")}
             >
-              Orçamento
-            </Button>
-            <Button 
-              className="bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow"
-              onClick={handleEmergenciaClick}
-            >
-              Emergência 24h
+              Solicitar Orçamento
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden text-foreground"
           >
-            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border">
-            <nav className="flex flex-col space-y-4 mt-4">
-              <button onClick={handleHomeClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer text-left">Início</button>
-              <Link to="/services" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Serviços</Link>
-              <Link to="/precos" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Preços</Link>
-              <Link to="/blog" onClick={handleLinkClick} className="text-foreground hover:text-primary transition-colors">Blog</Link>
-              <button onClick={handleAboutClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer text-left">Sobre</button>
-              <button onClick={handleContactClick} className="text-foreground hover:text-primary transition-colors bg-transparent border-0 p-0 font-inherit cursor-pointer text-left">Contato</button>
-              <div className="flex flex-col space-y-2 pt-4">
-                <Button 
-                  variant="outline" 
-                  className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  onClick={handleOrcamentoClick}
-                >
-                  Orçamento
-                </Button>
-                <Button 
-                  className="bg-gradient-gold text-primary-foreground shadow-gold"
-                  onClick={handleEmergenciaClick}
-                >
-                  Emergência 24h
-                </Button>
-              </div>
+          <div className="md:hidden mt-4 pb-4 border-t border-border/50">
+            <nav className="flex flex-col space-y-3 mt-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+              {navItems.map((item) =>
+                item.link ? (
+                  <Link key={item.label} to={item.link} onClick={() => setIsMenuOpen(false)} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button key={item.label} onClick={item.action} className="text-sm text-muted-foreground hover:text-foreground transition-colors bg-transparent border-0 p-0 cursor-pointer text-left" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                    {item.label}
+                  </button>
+                )
+              )}
+              <Button
+                size="sm"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 w-full mt-2"
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
+                onClick={() => {
+                  openWhatsApp(WHATSAPP_NUMBER, "Olá! Gostaria de solicitar um orçamento.");
+                  setIsMenuOpen(false);
+                }}
+              >
+                Solicitar Orçamento
+              </Button>
             </nav>
           </div>
         )}

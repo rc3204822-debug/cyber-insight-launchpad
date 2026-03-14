@@ -1,133 +1,72 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CheckCircle2, MapPin, Calendar, Shield } from "lucide-react";
+import { CheckCircle2, MapPin } from "lucide-react";
 
 const CasesSection = () => {
   const cases = [
     {
       category: "Investigação Conjugal",
-      location: "Asa Norte, Brasília - DF",
-      date: "Outubro 2024",
-      description: "Cliente suspeitava de infidelidade conjugal. Através de perícia digital forense, recuperamos conversas deletadas do WhatsApp que comprovaram a traição. Provas válidas para processo de divórcio.",
-      result: "Caso resolvido em 48 horas com provas jurídicas",
-      badge: "Resolvido"
+      location: "Asa Norte, Brasília",
+      description: "Recuperação de conversas deletadas que comprovaram infidelidade. Provas válidas para processo de divórcio.",
+      result: "Resolvido em 48 horas",
     },
     {
       category: "Crimes Cibernéticos",
       location: "Águas Claras, DF",
-      date: "Setembro 2024",
-      description: "Empresa vítima de invasão de sistema e vazamento de dados sigilosos. Investigação identificou funcionário interno responsável pela espionagem corporativa.",
-      result: "Invasor identificado, dados recuperados, processo criminal em andamento",
-      badge: "Resolvido"
+      description: "Identificação de funcionário interno responsável por espionagem corporativa e vazamento de dados sigilosos.",
+      result: "Invasor identificado",
     },
     {
       category: "Rastreamento Digital",
       location: "Taguatinga, DF",
-      date: "Agosto 2024",
-      description: "Pai procurava filha adolescente desaparecida. Rastreamento de celular e análise de redes sociais localizaram a jovem em menos de 24 horas.",
-      result: "Pessoa localizada com segurança e reunida com a família",
-      badge: "Resolvido"
+      description: "Rastreamento de celular e análise de redes sociais localizaram adolescente desaparecida.",
+      result: "Localizada em 24 horas",
     },
     {
       category: "Fraude Digital",
       location: "Lago Sul, Brasília",
-      date: "Julho 2024",
-      description: "Cliente perdeu R$ 85.000 em golpe de investimento online. Perícia digital rastreou transações, identificou criminosos e auxiliou na recuperação parcial dos valores.",
-      result: "Criminosos identificados, recuperação de 60% do valor",
-      badge: "Resolvido"
+      description: "Rastreamento de transações de golpe de R$ 85 mil. Identificação dos criminosos e recuperação parcial.",
+      result: "60% do valor recuperado",
     },
-    {
-      category: "Investigação Empresarial",
-      location: "Setor Comercial Sul, Brasília",
-      date: "Junho 2024",
-      description: "Empresa suspeitava de vazamento de informações para concorrente. Investigação digital identificou funcionário vendendo dados sigilosos.",
-      result: "Fraude interna comprovada com evidências digitais",
-      badge: "Resolvido"
-    },
-    {
-      category: "Recuperação de Dados",
-      location: "Ceilândia, DF",
-      date: "Maio 2024",
-      description: "Cliente teve HD externo formatado acidentalmente com arquivos pessoais e profissionais importantes. Recuperação forense restaurou 95% dos dados.",
-      result: "Dados recuperados: fotos, documentos e arquivos de trabalho",
-      badge: "Resolvido"
-    }
   ];
 
   return (
-    <section className="py-20 bg-gradient-dark">
+    <section className="py-24 bg-card">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Casos <span className="bg-gradient-gold bg-clip-text text-transparent">Resolvidos</span> em Brasília DF
+          <p className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            Resultados Comprovados
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            Casos resolvidos em Brasília
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Exemplos reais de investigações bem-sucedidas realizadas pelo nosso detetive particular 
-            em Brasília. Nomes omitidos por sigilo profissional.
+          <p className="text-muted-foreground max-w-2xl mx-auto" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            Exemplos reais de investigações bem-sucedidas. Nomes omitidos por sigilo profissional.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {cases.map((case_, index) => (
-            <Card key={index} className="bg-card border-border hover:shadow-gold transition-all duration-300">
-              <CardHeader>
-                <div className="flex items-center justify-between mb-3">
-                  <Badge className="bg-green-600 text-white border-0">
-                    <CheckCircle2 className="w-3 h-3 mr-1" />
-                    {case_.badge}
-                  </Badge>
-                  <span className="text-xs text-muted-foreground">{case_.date}</span>
-                </div>
-                <CardTitle className="text-lg text-foreground mb-2">
-                  {case_.category}
-                </CardTitle>
-                <div className="flex items-center text-sm text-muted-foreground">
-                  <MapPin className="w-4 h-4 mr-1" />
-                  {case_.location}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  {case_.description}
-                </p>
-                <div className="bg-green-600/20 border border-green-600/50 rounded-lg p-3">
-                  <div className="flex items-start">
-                    <Shield className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
-                    <p className="text-sm text-green-400 font-semibold">
-                      {case_.result}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {cases.map((c, index) => (
+            <div key={index} className="p-8 rounded-xl border border-border bg-background">
+              <div className="flex items-center justify-between mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <span className="text-xs font-medium tracking-wider uppercase text-primary">{c.category}</span>
+                <span className="text-xs text-muted-foreground flex items-center gap-1">
+                  <MapPin className="w-3 h-3" />
+                  {c.location}
+                </span>
+              </div>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                {c.description}
+              </p>
+              <div className="flex items-center gap-2 text-sm font-medium text-primary" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                <CheckCircle2 className="w-4 h-4" />
+                {c.result}
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Estatísticas de Casos */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          <div className="bg-card border border-primary/30 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-primary mb-2">500+</div>
-            <div className="text-sm text-muted-foreground">Casos Resolvidos</div>
-          </div>
-          <div className="bg-card border border-primary/30 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-primary mb-2">98%</div>
-            <div className="text-sm text-muted-foreground">Taxa de Sucesso</div>
-          </div>
-          <div className="bg-card border border-primary/30 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-primary mb-2">72h</div>
-            <div className="text-sm text-muted-foreground">Tempo Médio</div>
-          </div>
-          <div className="bg-card border border-primary/30 rounded-xl p-6 text-center">
-            <div className="text-4xl font-bold text-primary mb-2">100%</div>
-            <div className="text-sm text-muted-foreground">Sigilo Garantido</div>
-          </div>
-        </div>
-
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground italic">
-            * Todos os casos são reais. Informações pessoais omitidas por confidencialidade profissional.
-          </p>
-        </div>
+        <p className="text-center text-xs text-muted-foreground mt-10 italic" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+          * Todos os casos são reais. Informações pessoais omitidas por confidencialidade profissional.
+        </p>
       </div>
     </section>
   );

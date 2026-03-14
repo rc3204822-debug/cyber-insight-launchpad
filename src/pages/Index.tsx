@@ -12,7 +12,6 @@ import SEO from "@/components/SEO";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import FAQSection from "@/components/FAQSection";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import CasesSection from "@/components/CasesSection";
 
 const Index = () => {
@@ -26,7 +25,6 @@ const Index = () => {
           section.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
-      
       return () => clearTimeout(timer);
     }
   }, [location.state]);
@@ -36,14 +34,13 @@ const Index = () => {
       <SEO />
       <ConversionBanner />
       <Header />
-      <Breadcrumbs />
       <main>
         <HeroSection />
         <OfferSection />
         <ServicesSection />
         <SocialProof />
-        <AboutSection />
         <CasesSection />
+        <AboutSection />
         <FAQSection />
         <ContactSection />
       </main>

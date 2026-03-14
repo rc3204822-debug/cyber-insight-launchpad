@@ -1,91 +1,23 @@
-import { Button } from "@/components/ui/button";
-import { AlertTriangle, Clock, Shield } from "lucide-react";
-import { useState, useEffect } from "react";
-import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
+import { Phone, Shield } from "lucide-react";
 
 const ConversionBanner = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    hours: 23,
-    minutes: 45,
-    seconds: 30
-  });
-
-  const handleWhatsAppClick = () => {
-    const message = "🎯 Quero GARANTIR minha consulta GRATUITA antes que a oferta expire!";
-    openWhatsApp(WHATSAPP_NUMBER, message);
-  };
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        }
-        return prev;
-      });
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <div className="fixed top-0 w-full z-50 bg-destructive text-destructive-foreground py-2 px-4 shadow-lg">
-      <div className="container mx-auto">
-        {/* Desktop Layout */}
-        <div className="hidden md:flex items-center justify-between text-sm">
-          <div className="flex items-center space-x-2">
-            <AlertTriangle className="w-4 h-4" />
-            <span className="font-semibold">OFERTA LIMITADA:</span>
-            <span>Primeira consulta GRATUITA - Termina em:</span>
-          </div>
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2">
-              <Clock className="w-4 h-4" />
-              <span className="font-bold">
-                {String(timeLeft.hours).padStart(2, '0')}:
-                {String(timeLeft.minutes).padStart(2, '0')}:
-                {String(timeLeft.seconds).padStart(2, '0')}
-              </span>
-            </div>
-            <Button 
-              size="sm" 
-              variant="outline" 
-              className="bg-background text-destructive hover:bg-muted border-background"
-              onClick={handleWhatsAppClick}
-            >
-              GARANTIR AGORA
-            </Button>
-          </div>
+    <div className="fixed top-0 w-full z-50 bg-card/95 backdrop-blur-sm border-b border-border py-2.5 px-4">
+      <div className="container mx-auto flex items-center justify-between text-xs" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+        <div className="hidden md:flex items-center gap-4 text-muted-foreground">
+          <span className="flex items-center gap-1.5">
+            <Shield className="w-3.5 h-3.5 text-primary" />
+            Sigilo Profissional Garantido
+          </span>
+          <span className="w-px h-3 bg-border" />
+          <span>Atendimento 24h</span>
         </div>
-
-        {/* Mobile Layout */}
-        <div className="md:hidden flex flex-col space-y-2 text-xs">
-          <div className="flex items-center justify-center space-x-2">
-            <AlertTriangle className="w-3 h-3" />
-            <span className="font-semibold">OFERTA LIMITADA</span>
-          </div>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Clock className="w-3 h-3" />
-              <span className="font-bold">
-                {String(timeLeft.hours).padStart(2, '0')}:
-                {String(timeLeft.minutes).padStart(2, '0')}:
-                {String(timeLeft.seconds).padStart(2, '0')}
-              </span>
-            </div>
-            <Button 
-              size="sm" 
-              variant="outline" 
-              className="bg-background text-destructive hover:bg-muted border-background text-xs px-3 py-1"
-              onClick={handleWhatsAppClick}
-            >
-              GARANTIR
-            </Button>
-          </div>
+        <div className="flex items-center gap-2 text-foreground font-medium mx-auto md:mx-0">
+          <Phone className="w-3.5 h-3.5 text-primary" />
+          <a href="tel:+556133563925" className="hover:text-primary transition-colors">
+            (61) 3356-3925
+          </a>
+          <span className="text-muted-foreground hidden sm:inline">— WhatsApp disponível</span>
         </div>
       </div>
     </div>
