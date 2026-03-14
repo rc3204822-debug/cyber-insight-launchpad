@@ -1,128 +1,88 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import { 
-  Search, 
-  Smartphone, 
-  FileSearch, 
-  UserX, 
-  CreditCard, 
-  Shield,
-  Computer,
+import {
+  Search,
+  Smartphone,
+  UserX,
+  CreditCard,
   Globe,
-  Database
+  Database,
+  ArrowRight
 } from "lucide-react";
-import { openWhatsApp, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 const ServicesSection = () => {
   const navigate = useNavigate();
+
   const services = [
     {
-      icon: <Search className="w-8 h-8" />,
-      title: "Perícia Digital Forense em Brasília",
-      description: "Investigador particular DF especializado em análise de dispositivos eletrônicos e recuperação de dados.",
-      features: ["Recuperação de dados", "Perícia forense digital", "Análise de celulares"]
+      icon: <Search className="w-6 h-6" />,
+      title: "Perícia Digital Forense",
+      description: "Análise de dispositivos eletrônicos e recuperação de dados com metodologia forense.",
     },
     {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "Rastreamento de Celular em Brasília",
-      description: "Detetive particular DF oferece localização e monitoramento de dispositivos no Distrito Federal.",
-      features: ["Rastreamento celular DF", "Localização GPS Brasília", "Monitoramento digital"]
+      icon: <Smartphone className="w-6 h-6" />,
+      title: "Rastreamento de Celular",
+      description: "Localização e monitoramento de dispositivos no Distrito Federal com tecnologia avançada.",
     },
     {
-      icon: <UserX className="w-8 h-8" />,
-      title: "Investigação Conjugal em Brasília DF",
-      description: "Investigação de infidelidade conjugal no DF com detetive particular discreto e evidências sólidas.",
-      features: ["Investigação de traição DF", "Monitoramento conjugal", "Provas de infidelidade"]
+      icon: <UserX className="w-6 h-6" />,
+      title: "Investigação Conjugal",
+      description: "Investigação de infidelidade com discrição absoluta e evidências sólidas para processos.",
     },
     {
-      icon: <CreditCard className="w-8 h-8" />,
+      icon: <CreditCard className="w-6 h-6" />,
       title: "Fraudes Financeiras",
-      description: "Investigação de golpes online, fraudes bancárias e crimes financeiros digitais.",
-      features: ["Análise de transações", "Rastreamento de contas", "Recuperação de valores"]
+      description: "Investigação de golpes online, fraudes bancárias e rastreamento de transações.",
     },
     {
-      icon: <Globe className="w-8 h-8" />,
+      icon: <Globe className="w-6 h-6" />,
       title: "Crimes Cibernéticos",
-      description: "Investigação de hackers, vazamentos de dados e ataques cibernéticos corporativos.",
-      features: ["Análise de invasões", "Identificação de hackers", "Proteção preventiva"]
+      description: "Investigação de invasões, vazamentos de dados e ataques cibernéticos corporativos.",
     },
     {
-      icon: <Database className="w-8 h-8" />,
+      icon: <Database className="w-6 h-6" />,
       title: "Recuperação de Dados",
-      description: "Restauração de informações perdidas em casos de exclusão acidental ou sabotagem.",
-      features: ["HDs danificados", "Arquivos deletados", "Sistemas corrompidos"]
-    }
+      description: "Restauração de informações perdidas em HDs danificados, arquivos deletados e sistemas.",
+    },
   ];
 
   return (
-    <section id="services" className="py-20 bg-background">
+    <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Serviços de <span className="bg-gradient-gold bg-clip-text text-transparent">Investigação Particular em Brasília DF</span>
+          <p className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-4" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            Nossos Serviços
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+            Investigação Particular
+            <br />
+            <span className="text-primary">em Brasília DF</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Investigador particular em Brasília oferece serviços completos de investigação conjugal no DF 
-            com preço justo, perícia digital forense e resultados comprovados no Distrito Federal.
+          <p className="text-muted-foreground max-w-2xl mx-auto" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+            Serviços completos de investigação com perícia digital forense,
+            tecnologia de ponta e resultados comprovados no Distrito Federal.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden">
           {services.map((service, index) => (
-            <Card key={index} className="bg-card border-border hover:border-primary transition-all duration-300 hover:shadow-gold group">
-              <CardHeader>
-                <div className="text-primary mb-4 group-hover:text-accent transition-colors">
-                  {service.icon}
-                </div>
-                <CardTitle className="text-foreground text-xl mb-2">{service.title}</CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                      <Shield className="w-4 h-4 text-primary mr-2" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <Button 
-                  variant="outline" 
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-                  onClick={() => navigate('/services')}
-                >
-                  Saiba Mais
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="text-center mt-16">
-          <div className="bg-gradient-dark rounded-2xl p-8 md:p-12 border border-border">
-            <Computer className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Detetive Particular em Brasília - Atendimento 24h
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Investigador particular no DF disponível 24 horas para casos de investigação urgentes em Brasília. 
-              Serviços de detetive particular no Distrito Federal com atendimento emergencial.
-            </p>
-            <Button 
-              size="lg" 
-              className="bg-gradient-gold text-primary-foreground shadow-gold hover:shadow-glow text-lg px-8 py-4"
-              onClick={() => {
-                const message = "🚨 EMERGÊNCIA! Preciso do detetive particular DF com urgência. Caso emergencial.";
-                openWhatsApp(WHATSAPP_NUMBER, message);
-              }}
+            <div
+              key={index}
+              className="bg-card p-10 hover:bg-secondary/50 transition-colors duration-300 group cursor-pointer"
+              onClick={() => navigate('/services')}
             >
-              <Shield className="w-5 h-5 mr-2" />
-              Contato de Emergência
-            </Button>
-          </div>
+              <div className="text-primary mb-6 group-hover:text-accent transition-colors">
+                {service.icon}
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-3">{service.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-6" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                {service.description}
+              </p>
+              <span className="text-sm text-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+                Saiba mais <ArrowRight className="w-3.5 h-3.5" />
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
